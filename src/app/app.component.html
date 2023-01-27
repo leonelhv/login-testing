@@ -102,4 +102,29 @@
       </form>
     </div>
   </div>
+  <div class="bg-white mt-4 rounded-lg p-4">
+    <h2 class="text-xl font-bold">Datos del Formulario</h2>
+    <p class="font-light text-lg">
+      Nombre de Usuario: <span>{{ formLogin.get("usuario")?.value }}</span>
+    </p>
+    <p class="font-light text-lg">
+      Password: <span>{{ formLogin.get("password")?.value }}</span>
+    </p>
+
+    <div class="flex flex-wrap items-center gap-4 mt-3">
+      <span
+        class="px-4 py-2 text-base rounded-full text-red-600 bg-red-200"
+        *ngIf="formLogin.invalid"
+      >
+        Formulario Válido
+      </span>
+
+      <span
+        *ngIf="formLogin.valid"
+        class="px-4 py-2 text-base rounded-full text-green-600 bg-green-200"
+      >
+        Formulario Inválido
+      </span>
+    </div>
+  </div>
 </div>

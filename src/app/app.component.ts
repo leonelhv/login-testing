@@ -9,6 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'login-testing';
 
+  loginValid = false;
+
   constructor(private fb: FormBuilder) {}
 
   formLogin = this.fb.group({
