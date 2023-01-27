@@ -114,13 +114,13 @@
     <div class="flex flex-wrap items-center gap-4 mt-3">
       <span
         class="px-4 py-2 text-base rounded-full text-red-600 bg-red-200"
-        *ngIf="formLogin.invalid"
+        *ngIf="formLogin.valid"
       >
         Formulario Válido
       </span>
 
       <span
-        *ngIf="formLogin.valid"
+        *ngIf="formLogin.invalid"
         class="px-4 py-2 text-base rounded-full text-green-600 bg-green-200"
       >
         Formulario Inválido
