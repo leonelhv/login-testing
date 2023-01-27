@@ -27,4 +27,10 @@ export class AppComponent {
       this.formLogin.get(campo)?.invalid && this.formLogin.get(campo)?.touched
     );
   }
+
+  enviarFormulario() {
+    if (this.formLogin.valid) {
+      this.loginValid = true;
+    }
+  }
 }

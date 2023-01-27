@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -22,9 +23,13 @@ describe('AppComponent', () => {
       usuario: '',
       password: '',
     };
-
     app.formLogin.setValue(mockData);
-    expect(app.formLogin.invalid).toBe(true);
+
+    const miBoton = fixture.debugElement.query(By.css('#btn-login'));
+    miBoton.nativeElement.click();
+
+    const loginValid = false;
+    expect(app.loginValid).toEqual(loginValid);
   });
   it('should return valid formLogin', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -33,8 +38,13 @@ describe('AppComponent', () => {
       usuario: 'usuario1',
       password: '1234',
     };
-
     app.formLogin.setValue(mockData);
-    expect(app.formLogin.valid).toBe(true);
+
+    const miBoton = fixture.debugElement.query(By.css('#btn-login'));
+    miBoton.nativeElement.click();
+
+    const loginValid = true;
+
+    expect(app.loginValid).toEqual(loginValid);
   });
 });
